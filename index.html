@@ -47,51 +47,50 @@
             to { background-position: 450px 450px, 350px 370px; }
         }
 
-        /* HEADER: Tsarin sama don wayar salula */
+        /* Header na asali */
         header {
-            background: rgba(0, 31, 63, 0.95);
+            background: #001f3f;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #0074d9;
-            backdrop-filter: blur(8px);
         }
 
-        @media (min-width: 600px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 15px 6%;
-            }
-        }
-
-        /* Sunan sama na gefe mai Motsi da Launi */
+        /* WANNAN KAWAI NA GYARA: An saka wa KING SIRDIQUE motsi na bugawa da walkiya */
         .logo {
             font-weight: 900;
             font-size: 22px;
             line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            background: linear-gradient(45deg, #ffffff, #7fdbff, #ffffff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: logoZoom 4s ease-in-out infinite, shine 3s linear infinite;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            text-align: center;
+            color: #ffffff;
+            animation: kingLogoPulse 3s ease-in-out infinite; /* Motsi mai natsuwa */
+        }
+
+        /* Fassarar motsin KING SIRDIQUE */
+        @keyframes kingLogoPulse {
+            0% { 
+                transform: scale(1);
+                text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            }
+            50% { 
+                transform: scale(1.05); /* Yana dan girma kadan */
+                text-shadow: 0 0 15px rgba(127, 219, 255, 0.8), 0 2px 10px rgba(255,255,255,0.4); /* Yana fitar da haske */
+            }
+            100% { 
+                transform: scale(1);
+                text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            }
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -100,8 +99,6 @@
             font-size: 15px;
             font-weight: 600;
             transition: color 0.3s;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-            padding: 4px 8px;
         }
 
         .nav-links a:hover {
@@ -169,7 +166,7 @@
             100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 116, 217, 0.3); }
         }
 
-        /* Rubutun Welcome */
+        /* Fari kamar yadda yake a hotonka */
         .welcome-text {
             color: #7fdbff;
             font-size: 22px;
@@ -179,31 +176,14 @@
             letter-spacing: 1px;
         }
 
-        /* GYARAN SUNA: Dark Blue mai Motsi na Warwatsi (Pulse/Glow) */
         .main-name {
             font-size: 40px;
             font-weight: 800;
             margin: 5px 0 25px;
-            color: #001233; /* Dark Blue Mai Kyau */
+            color: #ffffff; /* Fari kamar da */
             line-height: 1.2;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
             letter-spacing: 0.5px;
-            animation: textScatter 3s ease-in-out infinite; /* Motsi na warwatsi */
-        }
-
-        /* Motsi na musamman don sunan ya rika warwatsi da haske */
-        @keyframes textScatter {
-            0% { 
-                transform: scale(1);
-                text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 3px 10px rgba(0,0,0,0.6);
-            }
-            50% { 
-                transform: scale(1.05); /* Yana dan budewa */
-                text-shadow: 0 0 20px rgba(127, 219, 255, 0.9), 0 0 30px rgba(255,255,255,0.7), 0 5px 20px rgba(0,0,0,0.4); /* Hasken yana warwatsi a gefe */
-            }
-            100% { 
-                transform: scale(1);
-                text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 3px 10px rgba(0,0,0,0.6);
-            }
         }
 
         /* Salon Akwatuna */
@@ -346,8 +326,6 @@
         </div>
 
         <div class="welcome-text">Welcome, I'm</div>
-        
-        <!-- SUNANKA MAI DARK BLUE DA MOTSI NA WARWATSI -->
         <div class="main-name">Abubakar<br>Abdullahi</div>
 
         <!-- AKWATIN: About Me -->
