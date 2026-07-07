@@ -47,18 +47,27 @@
             to { background-position: 450px 450px, 350px 370px; }
         }
 
-        /* Wurin Header / Navigation Bar */
+        /* HEADER: Tsarin sama don wayar salula */
         header {
-            background: rgba(0, 31, 63, 0.93);
+            background: rgba(0, 31, 63, 0.95);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
             align-items: center;
-            padding: 15px 6%;
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #0074d9;
             backdrop-filter: blur(8px);
+        }
+
+        @media (min-width: 600px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px 6%;
+            }
         }
 
         /* Sunan sama na gefe mai Motsi da Launi */
@@ -74,22 +83,15 @@
             -webkit-text-fill-color: transparent;
             animation: logoZoom 4s ease-in-out infinite, shine 3s linear infinite;
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
-
-        @keyframes logoZoom {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
+            text-align: center;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -99,6 +101,7 @@
             font-weight: 600;
             transition: color 0.3s;
             text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+            padding: 4px 8px;
         }
 
         .nav-links a:hover {
@@ -166,7 +169,7 @@
             100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 116, 217, 0.3); }
         }
 
-        /* RUBUTU MANYA DA SALO */
+        /* Rubutun Welcome */
         .welcome-text {
             color: #7fdbff;
             font-size: 22px;
@@ -176,14 +179,31 @@
             letter-spacing: 1px;
         }
 
+        /* GYARAN SUNA: Dark Blue mai Motsi na Warwatsi (Pulse/Glow) */
         .main-name {
             font-size: 40px;
             font-weight: 800;
             margin: 5px 0 25px;
-            color: #ffffff;
+            color: #001233; /* Dark Blue Mai Kyau */
             line-height: 1.2;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
             letter-spacing: 0.5px;
+            animation: textScatter 3s ease-in-out infinite; /* Motsi na warwatsi */
+        }
+
+        /* Motsi na musamman don sunan ya rika warwatsi da haske */
+        @keyframes textScatter {
+            0% { 
+                transform: scale(1);
+                text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 3px 10px rgba(0,0,0,0.6);
+            }
+            50% { 
+                transform: scale(1.05); /* Yana dan budewa */
+                text-shadow: 0 0 20px rgba(127, 219, 255, 0.9), 0 0 30px rgba(255,255,255,0.7), 0 5px 20px rgba(0,0,0,0.4); /* Hasken yana warwatsi a gefe */
+            }
+            100% { 
+                transform: scale(1);
+                text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 3px 10px rgba(0,0,0,0.6);
+            }
         }
 
         /* Salon Akwatuna */
@@ -198,7 +218,7 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         }
 
-        /* Kan magana Manya mai layin fari */
+        /* Kan magana Manya */
         .section-title {
             font-size: 24px;
             color: #7fdbff;
@@ -218,7 +238,7 @@
             line-height: 1.7;
         }
 
-        /* Tsarin Services (Ayyuka) */
+        /* Tsarin Services */
         .service-item {
             font-size: 17px;
             margin: 14px 0;
@@ -237,7 +257,7 @@
             margin-top: 15px;
         }
 
-        /* BUTTONS ZOOM: Tsarin Zoom In da Zoom Out */
+        /* BUTTONS ZOOM */
         .social-btn {
             display: flex;
             align-items: center;
@@ -259,7 +279,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Banbanta lokacin motsin maballan */
         .social-container a:nth-child(1) { animation-delay: 0.0s; }
         .social-container a:nth-child(2) { animation-delay: 0.3s; }
         .social-container a:nth-child(3) { animation-delay: 0.6s; }
@@ -278,7 +297,7 @@
         .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3); }
         .btn-email { background: #ea4335; box-shadow: 0 4px 15px rgba(234, 67, 53, 0.3); }
 
-        /* ALL RIGHTS RESERVED: Zoom In/Out da Chanza Kala */
+        /* ALL RIGHTS RESERVED */
         .copyright-text {
             font-size: 14px;
             margin-top: 40px;
@@ -326,8 +345,9 @@
             </div>
         </div>
 
-        <!-- GYARA: Welcome, I'm -->
         <div class="welcome-text">Welcome, I'm</div>
+        
+        <!-- SUNANKA MAI DARK BLUE DA MOTSI NA WARWATSI -->
         <div class="main-name">Abubakar<br>Abdullahi</div>
 
         <!-- AKWATIN: About Me -->
@@ -362,7 +382,7 @@
             </div>
         </div>
 
-        <!-- Sanarwar Mallaka ta Kasa (Mai Zoom da Canza Kala) -->
+        <!-- Sanarwar Mallaka ta Kasa -->
         <div class="copyright-text">
             &copy; 2026 <span class="highlight-name">SIRDIQUE0</span>. All Rights Reserved.
         </div>
